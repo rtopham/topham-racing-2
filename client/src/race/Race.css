@@ -1,0 +1,72 @@
+.centerthis{
+  text-align: center;
+}
+
+.lastRaceLogo{
+  max-width: 60px;
+  max-height: 60px;
+  margin-bottom: 20px;
+  vertical-align: middle
+}
+
+.lastRacePanel{
+  margin-top: 25px;
+}
+
+.raceName{
+
+  font-size: 36px;
+
+ }
+
+ .linkSpace{
+  margin-left: 10px;
+}
+
+
+.logoimage{
+  max-width: 25px;
+  max-height: 25px;
+  min-width: 25px;
+  margin-right: 10px;
+}
+
+.editRacePanel{
+  
+  height:0;
+  overflow: hidden;
+ 
+}
+
+.expandRacePanel{
+  
+  height:580px;
+  
+  overflow: hidden;
+  z-index: 10;
+  
+}
+
+.editForm{
+  width:600px
+}
+
+.editRace{
+  overflow:hidden;
+}
+
+.Trans{
+/*  border: solid red;*/
+height: -1;
+  -webkit-transition: height 2s; /* Safari */
+  transition: height 2s;
+}
+
+#closed{
+  height: 0px;
+}
+
+#open{
+  
+  height: 500px;
+}

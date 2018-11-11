@@ -1,0 +1,16 @@
+@media all and (min-width: 480px) {
+    .globalCore {
+      padding: 60px 0px 0px 0px;
+      margin: 0 auto;
+      max-width: 930px;
+      
+    }
+  
+  }
+
+  .centerthis{
+    text-align: center;
+  }
+
+
+  

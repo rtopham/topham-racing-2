@@ -1,0 +1,15 @@
+  .stravaPanel{
+    margin-top: 25px;
+  }
+
+  .stravaLogo{
+    max-width: 60px;
+    max-height: 60px;
+    margin-bottom: 20px;
+    vertical-align: middle
+  }
+
+  .stravaTitle{
+    font-size: 36px;
+  }
+  

@@ -1,0 +1,86 @@
+@media all and (min-width: 480px) {
+
+  .Signup {
+    padding: 60px 0px;
+    margin: 0 auto;
+    max-width: 400px;
+    
+  }
+
+  .Signup form {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 320px;
+    
+  }
+
+  .Profile {
+    padding: 60px 0px;
+    margin: 0 auto;
+    max-width: 930px;
+
+  }
+
+  .EditProfile {
+    padding: 60px 0px;
+    margin: 0 auto;
+    max-width: 400px;
+    
+  }
+
+  .EditProfile form {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 320px;
+    
+  }
+  .Users {
+      padding: 60px 0px;
+      margin: 0 auto;
+      max-width: 400px;
+      
+    }
+  
+    .Users form {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 320px;
+      
+    }
+  }
+  
+  .Users form span.help-block {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #999;
+  }
+
+  .Profile form span.help-block {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #999;
+  }
+
+  .Profile-glyph{
+    margin-left: 10px;
+
+  }
+
+  .EditProfile form span.help-block {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #999;
+  }
+
+  .Signup form span.help-block {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: #999;
+  }
+
+  .modal-container {
+    position: relative;
+  }
+  .modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
+  }
