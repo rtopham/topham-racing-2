@@ -1,3 +1,8 @@
+//Note, the banner components store banner images directly in the database, which decreases performance.
+//The bannerLink components store banner images in /public/banners/ and store the filename in the database.
+//bannerLink is implemented for efficiency.
+
+
 import React, {Component} from 'react'
 import {Image} from "react-bootstrap"
 import {listBannersByUserNoAuth} from '../banner/api-banner'

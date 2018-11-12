@@ -8,18 +8,22 @@ import NewRace from './../race/NewRace'
 import EditProfile from './../user/EditProfile'
 import {listByUser} from './../race/api-race.js'
 import {listBannersByUser} from '../banner/api-banner'
-import NewBanner from './../banner/NewBanner'
-import BannerList from './../banner/BannerList'
+import {listBannerLinksByUser} from '../bannerlink/api-bannerLink'
+//import NewBanner from './../banner/NewBanner'
+import NewBannerLink from '../bannerlink/NewBannerLink'
+//import BannerList from './../banner/BannerList'
+import BannerLinkList from './../bannerlink/BannerLinkList'
 import "./Users.css"
 
-class Profile extends Component {
+class Dashboard extends Component {
   constructor({match}) {
     super()
     this.state = {
       user: {},
       redirectToSignin: false,
       races: [],
-      banners:[]
+      banners:[],
+      bannerLinks:[]
     }
     this.match = match
   }
@@ -67,7 +71,27 @@ class Profile extends Component {
     this.setState({races: updatedRaces})
   }
 
-  loadBanners = (user) =>{
+loadBanners = (user)=>{
+this.loadBannerLinks(user)
+this.loadBannerImages(user)
+}
+
+ loadBannerLinks = (user) =>{
+    const jwt = auth.isAuthenticated()
+    listBannerLinksByUser({
+      userId: user
+    }, {
+      t: jwt.token
+    }).then((data) => {
+      if (data.error) {
+        console.log(data.error)
+      } else {
+        this.setState({bannerLinks: data})
+       }
+    })
+  }
+
+loadBannerImages = (user) =>{
     const jwt = auth.isAuthenticated()
     listBannersByUser({
       userId: user
@@ -83,9 +107,8 @@ class Profile extends Component {
   }
 
 
-
   render() {
-
+//console.log(this.state.bannerLinks)
     const redirectToSignin = this.state.redirectToSignin
     if (redirectToSignin) {
       return <Redirect to='/signin'/>
@@ -113,8 +136,8 @@ class Profile extends Component {
           <Panel.Title toggle>Banners</Panel.Title>
           <Panel.Collapse>
             <Panel.Body>
-              <NewBanner reloadBanners={this.loadBanners}/>
-              <BannerList banners={this.state.banners} reloadBanners={this.loadBanners}/>
+              <NewBannerLink reloadBanners={this.loadBanners}/>
+              <BannerLinkList banners={this.state.bannerLinks} reloadBanners={this.loadBanners}/>
             </Panel.Body>
           </Panel.Collapse>
         </Panel.Heading>
@@ -125,4 +148,4 @@ class Profile extends Component {
 }
 
 
-export default Profile
+export default Dashboard

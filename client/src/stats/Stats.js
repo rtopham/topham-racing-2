@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {listByUserSearch} from './../race/api-race.js'
 import YearToDate from './../stats/YearToDate'
 import AllTime from './../stats/AllTime'
-import Banner from './../banner/Banner'
+import BannerLink from './../bannerlink/BannerLink'
 import "./Stats.css"
 
 
@@ -98,7 +98,7 @@ listByUserSearch({
 
     return (
       <div className="globalCore">
-      <Banner userId={this.match.params.userId}/>
+      <BannerLink userId={this.match.params.userId}/>
       <YearToDate ytdRaces={this.state.ytdRaces} races={this.state.races} ytdStats={this.state.ytdStats}/>
       <AllTime races={this.state.races} alltimeStats={this.state.alltimeStats}/>
       </div>

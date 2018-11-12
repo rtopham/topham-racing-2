@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import RaceList from './../race/RaceList'
 import {listByUserSearch} from './../race/api-race.js'
 import LastRace from './../race/LastRace'
-import Banner from '../banner/Banner'
+import BannerLink from '../bannerlink/BannerLink'
 import "./Core.css"
 
 class Home extends Component {
@@ -52,7 +52,7 @@ listByUserSearch({
     if(!this.state.races[0])return null; else
     return (
       <div className="globalCore">
-      <Banner userId={this.match.params.userId}/>
+      <BannerLink userId={this.match.params.userId}/>
       <LastRace race={this.state.races[0]}/>
       <RaceList userId={this.match.params.userId} races={this.state.races}/>
       </div>

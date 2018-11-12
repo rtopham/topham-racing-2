@@ -8,6 +8,7 @@ import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
 import raceRoutes from './routes/race.routes'
 import bannerRoutes from './routes/banner.routes'
+import bannerLinkRoutes from './routes/bannerLink.routes'
 
 const app = express()
 
@@ -28,7 +29,9 @@ app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', raceRoutes)
 app.use('/', bannerRoutes)
+app.use('/', bannerLinkRoutes)
 
+app.use(express.static('public'))
 
 // Catch unauthorised errors
 app.use((err, req, res, next) => {

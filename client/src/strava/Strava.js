@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {getStravaByUser} from './../strava/api-strava.js'
 import {getStravaToken} from './../user/api-user.js'
 import StravaStatsPanel from './StravaStatsPanel.js'
-import Banner from './../banner/Banner'
+import BannerLink from './../bannerlink/BannerLink'
 
 function StravaWidgets(){
   return(
@@ -139,7 +139,7 @@ getStravaByUser({
 
     return (
       <div className="globalCore">
-      <Banner userId={this.match.params.userId}/>
+      <BannerLink userId={this.match.params.userId}/>
       <StravaStatsPanel title="Recent Stats (last 28 days)" stats={this.state.stravaStats.recentStats}/>
       <StravaStatsPanel title="Year-to-Date Stats" stats={this.state.stravaStats.ytdStats}/>
       <StravaStatsPanel title="All Time Stats (since 2012)" stats={this.state.stravaStats.allTimeStats}/>

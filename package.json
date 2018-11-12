@@ -1,7 +1,7 @@
 {
-  "name": "mern-skeleton",
-  "version": "1.0.0",
-  "description": "A skeletal MERN app.",
+  "name": "topham-racing-2",
+  "version": "2.0.0",
+  "description": "A bike racing database app.",
   "main": "server.js",
   "scripts": {
     "start:client": "cd client && npm start",

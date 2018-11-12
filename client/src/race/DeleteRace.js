@@ -24,7 +24,7 @@ class DeleteRace extends Component {
       } else {
         this.setState({open: false})
         this.props.reloadRaces(this.props.userId)
-        this.props.closeRacePanel()
+//        this.props.closeRacePanel()
       }
     })
   }

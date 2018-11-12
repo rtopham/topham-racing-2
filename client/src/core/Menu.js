@@ -21,17 +21,18 @@ const Menu = withRouter(({history}) => (
 
 </Nav>
 
+{/*
 <Nav activeHref={history.location.pathname}>
   <NavItem href="/users">Users</NavItem>
 </Nav>
-
+*/}
 
 <Nav activeHref={history.location.pathname} pullRight>
-  {
+  {/*
         !auth.isAuthenticated() && (
           <NavItem href="/signup">Sign Up</NavItem>
         )
-  }
+        */}
     {     
         !auth.isAuthenticated() && (
           <NavItem href="/signin">Sign In</NavItem>
