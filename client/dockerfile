@@ -1,0 +1,8 @@
+#build environment
+# base image
+FROM node:10.11.0 
+
+ADD ./ /
+RUN npm install && npm run build
+EXPOSE 80
+RUN npm run server

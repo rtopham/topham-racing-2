@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import {Panel, ListGroup, ListGroupItem} from "react-bootstrap"
-import stravaLogo from './../assets/logos/stravaicon.jpg'
+//import stravaLogo from './../assets/logos/stravaicon.jpg'
 import "./Strava.css"
 
 class StravaStatsPanel extends Component {
 
+  
   render() {
- 
+    const stravaLogo='/logos/stravaicon.jpg'
     return (
       <Panel className="stravaPanel">
         <Panel.Heading><Panel.Title componentClass="h2">Strava</Panel.Title></Panel.Heading>

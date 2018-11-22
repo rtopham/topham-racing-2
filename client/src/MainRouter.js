@@ -12,7 +12,7 @@ import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
 
 const divStyle={
-  marginTop: "150px",
+  marginTop: "150px", 
   height: "150px",
   width: "100%",
   textAlign: "center"
@@ -36,6 +36,7 @@ class MainRouter extends Component {
      <Menu/>
       <Switch>
       <Redirect exact from="/" to="/races/5bd91a027b59b61efe06ae3d" />
+{/*<Route exact path="/" component ={Home}/>*/}
       <Redirect exact from="/stats" to="/stats/5bd91a027b59b61efe06ae3d" />
       <Redirect exact from="/strava" to="/strava/5bd91a027b59b61efe06ae3d" />
 {/*        <Route path="/users" component={Users}/>*/}

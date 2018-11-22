@@ -1,26 +1,26 @@
 import React, {Component} from 'react'
 import {Panel,ListGroup, ListGroupItem} from "react-bootstrap"
-import icupLogo from './../assets/logos/icup.png'
-import mwLogo from './../assets/logos/midweek.jpg'
-import USACLogo from './../assets/logos/USAC.png'
-import USCSLogo from './../assets/logos/uscs.jpg'
-import chainRing from './../assets/logos/chainring.jpg'
+//import icupLogo from './../assets/logos/icup.jpg'
+//import mwLogo from './../assets/logos/midweek.jpg'
+//import USACLogo from './../assets/logos/USAC.png'
+//import USCSLogo from './../assets/logos/uscs.jpg'
+//import chainRing from './../assets/logos/chainring.jpg'
 import "./Race.css"
 
 class LastRace extends Component {
 
   render() {
-        let logo ='';
+    let logo ='';
     switch (this.props.race.series){
-      case "Intermountain Cup": logo=icupLogo
+      case "Intermountain Cup": logo='/logos/icup.jpg'
       break
-      case "Mid-Week": logo=mwLogo
+      case "Mid-Week": logo= '/logos/midweek.jpg'
       break
-      case "USAC": logo=USACLogo
+      case "USAC": logo = '/logos/USAC.png'
       break
-      case "Utah State Championship Series": logo=USCSLogo
+      case "Utah State Championship Series": logo='/logos/uscs.jpg'
       break
-      default:logo=chainRing
+      default: logo='/logos/chainring.jpg'
       break
 
     }

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Panel, ListGroup, ListGroupItem} from "react-bootstrap"
-import icupLogo from './../assets/logos/icup.png'
-import mwLogo from './../assets/logos/midweek.jpg'
-import USACLogo from './../assets/logos/USAC.png'
-import chainRing from './../assets/logos/chainring.jpg'
+//import icupLogo from './../assets/logos/icup.jpg'
+//import mwLogo from './../assets/logos/midweek.jpg'
+//import USACLogo from './../assets/logos/USAC.png'
+//import chainRing from './../assets/logos/chainring.jpg'
 
 class YearToDate extends Component {
 
@@ -33,6 +33,11 @@ class YearToDate extends Component {
 
 
   render() {
+
+const icupLogo  ='/logos/icup.jpg'
+const mwLogo    ='/logos/midweek.jpg'
+const USACLogo  ='/logos/USAC.png'
+const chainRing ='/logos/chainring.jpg'
  
     return (
       <Panel className="statsPanel">
