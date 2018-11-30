@@ -31,9 +31,12 @@ loadBanners = (user) =>{
 render() {
   if(!this.state.banners[0]) return null
 
+const urlPrefix=(process.env.NODE_ENV==='development')? process.env.REACT_APP_URL_PREFIX : '/banners/'
+
 
 //const bannerURL='/api/banners/photo/'+this.state.banners[currentBanner]._id
-const bannerURL='/banners/'+this.state.banners[this.state.currentBanner].filename
+//const bannerURL='http://192.168.1.130:3001/banners/'+this.state.banners[this.state.currentBanner].filename
+const bannerURL= urlPrefix + this.state.banners[this.state.currentBanner].filename
     return (
       <Image responsive rounded src={bannerURL}/>
 

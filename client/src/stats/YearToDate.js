@@ -33,7 +33,7 @@ class YearToDate extends Component {
 
 
   render() {
-
+if(!this.props.ytdRaces) return null
 const icupLogo  ='/logos/icup.jpg'
 const mwLogo    ='/logos/midweek.jpg'
 const USACLogo  ='/logos/USAC.png'
