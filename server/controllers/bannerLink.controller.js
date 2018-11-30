@@ -18,7 +18,7 @@ const create = (req, res, next) => {
     let bannerLink = new BannerLink(fields)
     bannerLink.postedBy= req.profile
     let imgUrl = ''
-    console.log('getting here')
+//    console.log('getting here')
 const saveBanner =() =>{    
     let possible = 'abcdefghijklmnopqrstuvwxyz0123456789'
     for(let i=0; i<6; i+=1){
@@ -34,9 +34,14 @@ const saveBanner =() =>{
     const tempPath= files.photo.path
     const ext = path.extname(files.photo.name).toLowerCase()
 //    let imgUrl=path.basename(files.photo.name.toLowerCase(),ext)
-    const targetPath = path.resolve(`./client/public/banners/${imgUrl}${ext}`); 
+    const targetPath = path.resolve(`public/banners/${imgUrl}${ext}`); 
+
     bannerLink.filename=imgUrl+ext
-    fs.rename(tempPath,targetPath, (err) =>{
+//    fs.rename(tempPath,targetPath, (err) =>{
+//      if (err) throw err
+//    })
+
+    fs.copyFile(tempPath,targetPath, (err) =>{
       if (err) throw err
     })
 
@@ -104,7 +109,8 @@ const remove = (req, res) => {
           error: errorHandler.getErrorMessage(err)
         })
       } else{ 
-      fs.unlink(path.resolve(`./client/public/banners/${bannerLink.filename}`), (err =>{if(err) throw err}))
+      fs.unlink(path.resolve(`public/banners/${bannerLink.filename}`), (err =>{if(err) throw err})) 
+
       res.json(deletedBanner)
       }
     })

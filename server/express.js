@@ -12,16 +12,17 @@ import bannerLinkRoutes from './routes/bannerLink.routes'
 import Template from './../template' 
 
 // modules for server side rendering
-/*
+
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import MainRouter from './../client/src/MainRouter'
 import StaticRouter from 'react-router-dom/StaticRouter'
 import { SheetsRegistry } from 'react-jss/lib/jss'
-import JssProvider from 'react-jss/lib/JssProvider'   
-*/
+import JssProvider from 'react-jss/lib/JssProvider'      
+
 
 const app = express() 
+
 
 // parse body params and attach them to req.body
 app.use(bodyParser.json())
@@ -43,33 +44,41 @@ app.use('/', bannerRoutes)
 app.use('/', bannerLinkRoutes)
 
 //#app.use(express.static('public')) 
-app.use(express.static('client/build'))       
+app.use(express.static('client/build'))
+app.use(express.static('public'))
+app.use(express.static('public/banners'))
 
 /*
 app.all('/api/*', (req, res) =>{ 
 
 })
 */
-
 /*
-app.get('*', (req, res) =>{ 
-  const sheetsRegistry = new SheetsRegistry()
-  const generateClassName = createGenerateClassName() 
-  const context = {}
-  const markup = ReactDOMServer.renderToString(React.createElement('StaticRouter',{location:req.url, context:context},
-        React.createElement('JssProvider',{registry:sheetsRegistry,generateClassName:generateClassName},
-        React.createElement('MainRouter',{},'')
-        )
-        ))
-  console.log("Sending Template")
-  const css = sheetsRegistry.toString()
-  rest.status(200).send(Template({
-    markup:markup,
-    css: css
-  })) 
-})
+app.get('*', (req, res) => {
 
+//  const sheetsRegistry = new SheetsRegistry()
+//  const generateClassName = createGenerateClassName()
+  const context = {}
+  const markup = ReactDOMServer.renderToString(
+     <StaticRouter location={req.url} context={context}>
+
+             <MainRouter/>
+
+     </StaticRouter>
+    )
+   if (context.url) {
+     return res.redirect(303, context.url)
+   }
+   const css = sheetsRegistry.toString()
+   res.status(200).send(Template({
+     markup: markup
+   }))
+})
 */
+
+app.get('*', function (req, res) {
+  res.sendfile("client/build/index.html");
+})
 
 // Catch unauthorised errors
 app.use((err, req, res, next) => {

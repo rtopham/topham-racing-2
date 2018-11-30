@@ -17,7 +17,7 @@ const divStyle={
   width: "100%",
   textAlign: "center"
 }
-const NoMatch = () => <div style={divStyle}><h2>Page Not Found</h2></div>
+//const NoMatch = () => <div style={divStyle}><h2>Page Not Found</h2></div>
 
 class MainRouter extends Component {
 
@@ -32,6 +32,7 @@ class MainRouter extends Component {
 */
 
   render() {
+
     return (<div>
      <Menu/>
       <Switch>
@@ -48,7 +49,7 @@ class MainRouter extends Component {
 {/*        <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>*/}
         <PrivateRoute path="/user/dashboard/:userId" component={Dashboard} />
         <Route path="/user/:userId" component={Profile}/>
-        <Route path="*" component={NoMatch} />
+        <Route path="*" component={() => <div style={divStyle}><h2>Page Not Found</h2></div>} />
  
 
       </Switch>
